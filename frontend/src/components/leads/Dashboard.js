@@ -8,5 +8,5 @@ export default function Dashboard() {
       <Form />
       <Leads />
     </Fragment>
-  )
+  );
 }
