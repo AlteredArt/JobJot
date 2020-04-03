@@ -1,3 +1,4 @@
+//your reducer may have a problem.
 import { GET_LEADS, DELETE_LEAD } from '../actions/types.js';
 
 const initialState = []
@@ -8,8 +9,8 @@ export default function(state = initialState, action) {
     case GET_LEADS:
       return [...action.payload];
     case DELETE_LEAD:
-      return{
-        ...state,
+      return {
+        ...action.payload,
         leads: state.leads.filter(lead => lead.id !== action.payload)
       };
     default:
