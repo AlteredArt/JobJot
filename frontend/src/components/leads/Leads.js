@@ -1,17 +1,16 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-//this sets prop types
-import PropTypes from 'prop-types';
 import { getLeads, deleteLead } from '../../actions/leads';
+// import PropTypes from 'prop-types';
 
 export class Leads extends Component {
-//static propTypes
-//this basically says what type the prop is
-  static propTypes = {
-    leads: PropTypes.array.isRequired,
-    getLeads: PropTypes.func.isRequired,
-    deleteLead: PropTypes.func.isRequired
-  };
+
+
+  // static propTypes = {
+  //   leads: PropTypes.array.isRequired,
+  //   getLeads: PropTypes.func.isRequired,
+  //   deleteLead: PropTypes.func.isRequired
+  // };
 
   componentDidMount() {
     this.props.getLeads();
@@ -39,7 +38,7 @@ export class Leads extends Component {
                 <td>{lead.message}</td>
                 <td>
                   <button
-                    onClick={this.props.deleteLead.bind(this, lead.id)}
+                    onClick={() => this.props.deleteLead(lead.id)}
                     className='btn btn-danger btn-sm'
                   >
                     {" "}
@@ -58,14 +57,14 @@ export class Leads extends Component {
 const mapStateToProps = ({leads}) => ({
   leads
 });
-
+// what kind of functionality is needed here
 const mapDispatchToProps = dispatch => ({
   getLeads: () => getLeads(dispatch),
-  deleteLead: () => deleteLead(dispatch)
+  deleteLead: (id) => deleteLead(id)(dispatch)
 });
 
 
 export default connect(
   mapStateToProps,
-   mapDispatchToProps,
+   mapDispatchToProps
  )(Leads);
