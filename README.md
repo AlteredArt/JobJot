@@ -1,2 +1,84 @@
-# JobJot
-// fill out your read me .
+Questions
+1) which deployment should i use?
+2) how to deploy
+3) what need to be installed in order to use on another machine?
+4)
+
+Problems
+1) you might have a problem in your store with the dev tools in store.js
+2) your clear leads reducer in leads.js/reducers
+3) all the reducers in auth.js/reducers need work
+4) 
+
+
+
+  Job Jot
+
+Welcome to Job Jot, where you can personally keep track of all your jobs and or leads. Sign into your personal account secured with a Django backend, and add or delete jobs as necessary. ##########
+
+  Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+  Prerequisites
+
+You will need to install the following:
+  1.  ~npm install
+
+Give examples
+Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+Give the example
+And repeat
+
+until finished
+End with an example of getting some data out of the system or using it for a little demo
+
+Running the tests
+
+Explain how to run the automated tests for this system
+
+Break down into end to end tests
+
+Explain what these tests test and why
+
+Give an example
+And coding style tests
+
+Explain what these tests test and why
+
+Give an example
+Deployment
+
+Add additional notes about how to deploy this on a live system
+
+Built With
+
+Dropwizard - The web framework used
+Maven - Dependency Management
+ROME - Used to generate RSS Feeds
+Contributing
+
+Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+
+Versioning
+
+We use SemVer for versioning. For the versions available, see the tags on this repository.
+
+Authors
+Billie Thompson - Initial work - PurpleBooth
+See also the list of contributors who participated in this project.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+Acknowledgments
+
+Hat tip to anyone whose code was used
+Inspiration
+etc

@@ -1,25 +1,24 @@
+// maybe a problem in map state to props
+// this is my leads component handles the lead box and is taken to dashboard
+// when the component mounts it gets the leads
+// you can also delete the lead
+// mapping state to props
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getLeads, deleteLead } from '../../actions/leads';
-// import PropTypes from 'prop-types';
+import store from '../../store';
 
 export class Leads extends Component {
 
-
-  // static propTypes = {
-  //   leads: PropTypes.array.isRequired,
-  //   getLeads: PropTypes.func.isRequired,
-  //   deleteLead: PropTypes.func.isRequired
-  // };
-
   componentDidMount() {
-    this.props.getLeads();
+    this.props.getLeads(store.dispatch, store.getState);
   }
 
-  render () {
+  render() {
+    console.log(this.props.deleteLead)
     return (
       <Fragment>
-        <h2>List of your Jobs!</h2>
+        <h2>Leads</h2>
         <table className="table table-striped">
           <thead>
             <tr>
@@ -27,10 +26,11 @@ export class Leads extends Component {
               <th>Name</th>
               <th>Email</th>
               <th>Message</th>
+              <th />
             </tr>
           </thead>
           <tbody>
-            {this.props.leads.map(lead => (
+            {this.props.leads.map((lead) => (
               <tr key={lead.id}>
                 <td>{lead.id}</td>
                 <td>{lead.name}</td>
@@ -38,33 +38,26 @@ export class Leads extends Component {
                 <td>{lead.message}</td>
                 <td>
                   <button
-                    onClick={() => this.props.deleteLead(lead.id)}
-                    className='btn btn-danger btn-sm'
-                  >
-                    {" "}
-                    DELETE
-                    </button>
+                    onClick={() => this.props.deleteLead(lead.id, store.dispatch, store.getState)}
+                    className="btn btn-danger btn-sm"
+                  >Delete</button>
                 </td>
               </tr>
             ))}
-            </tbody>
-          </table>
+          </tbody>
+        </table>
       </Fragment>
     );
   }
 }
 
-const mapStateToProps = ({leads}) => ({
-  leads
+const mapStateToProps = (state) => ({
+  leads: state.leads,
 });
-// what kind of functionality is needed here
+
 const mapDispatchToProps = dispatch => ({
-  getLeads: () => getLeads(dispatch),
-  deleteLead: (id) => deleteLead(id)(dispatch)
+  getLeads,
+  deleteLead
 });
 
-
-export default connect(
-  mapStateToProps,
-   mapDispatchToProps
- )(Leads);
+export default connect(mapStateToProps, mapDispatchToProps)(Leads);
