@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from knox.models import AuthToken
 from .serializers import UserSerializer, RegisterSerializer, LoginSerializer
 
-# Register API
+#write your register api
 class RegisterAPI(generics.GenericAPIView):
   serializer_class = RegisterSerializer
 
@@ -17,7 +17,7 @@ class RegisterAPI(generics.GenericAPIView):
       "token": token
     })
 
-# Login API
+# next the login api
 class LoginAPI(generics.GenericAPIView):
   serializer_class = LoginSerializer
 
@@ -31,7 +31,7 @@ class LoginAPI(generics.GenericAPIView):
       "token": token
     })
 
-# Get User API
+# finally get the user api
 class UserAPI(generics.RetrieveAPIView):
   permission_classes = [
     permissions.IsAuthenticated,

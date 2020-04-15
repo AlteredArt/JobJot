@@ -18,7 +18,7 @@ export class Leads extends Component {
     console.log(this.props.deleteLead)
     return (
       <Fragment>
-        <h2>Leads</h2>
+        <h2>List of Jobs</h2>
         <table className="table table-striped">
           <thead>
             <tr>

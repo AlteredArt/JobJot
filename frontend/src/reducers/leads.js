@@ -12,16 +12,16 @@ export default function (state = initialState, action) {
 // in the case of delete lead, this is working
     case DELETE_LEAD:
     console.log('delete lead')
-      return state.leads.filter(lead => lead.id !== action.payload);
+      return state.filter(lead => lead.id !== action.payload);
 // in case of add lead, this is working
     case ADD_LEAD:
     console.log('add lead')
+    // it breaking right here
       return [...state, action.payload]
 // in the case of clear lead, this needs work
     // case CLEAR_LEADS:
     // console.log('clear leadd')
     //   return [...action.payload]
-    // i want to return ...state, and leads: as [] and empty array
     default:
       return state;
   }

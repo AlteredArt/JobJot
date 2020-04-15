@@ -44,7 +44,7 @@ export class Register extends Component {
     return (
       <div className="col-md-6 m-auto">
         <div className="card card-body mt-5">
-          <h2 className="text-center">Register</h2>
+          <h2 className="text-center">SIGNUP</h2>
           <form onSubmit={this.onSubmit}>
             <div className="form-group">
               <label>Username</label>
@@ -88,7 +88,7 @@ export class Register extends Component {
             </div>
             <div className="form-group">
               <button type="submit" className="btn btn-primary">
-                Register
+                Signup
               </button>
             </div>
             <p>

@@ -26,7 +26,7 @@ export class Header extends Component {
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
           <Link to="/register" className="nav-link">
-            Register
+            Signup
           </Link>
         </li>
         <li className="nav-item">

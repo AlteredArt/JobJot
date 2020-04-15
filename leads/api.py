@@ -2,9 +2,7 @@ from leads.models import Lead
 from rest_framework import viewsets, permissions
 from .serializers import LeadSerializer
 
-# Lead Viewset
-
-
+# Lead viewset goes here
 class LeadViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.IsAuthenticated,
